@@ -1,0 +1,136 @@
+<div class="main-content bg-custom d-flex align-items-center">
+  <div class="container mt-4 pb-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-7">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="client-logo-area">
+              <img class="client-logo" src="assets/img/logo/caam-logo.png" />
+            </div>
+            <form [formGroup]="loginFormGroup">
+              <div
+                class="form-group mb-3"
+                [ngClass]="{ focused: focus === true }">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text bg-primary">
+                      <i class="fas fa-user text-white"></i>
+                    </span>
+                  </div>
+                  <input
+                    class="form-control text-dark"
+                    placeholder="Username"
+                    type="text"
+                    (focus)="focus = true"
+                    (blur)="focus = false"
+                    formControlName="username"/>
+                </div>
+              </div>
+              <div class="form-group" [ngClass]="{ focused: focus1 === true }">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text bg-primary">
+                      <i class="fas fa-lock text-white"></i>
+                    </span>
+                  </div>
+                  <input
+                    class="form-control text-dark"
+                    placeholder="Password"
+                    type="password"
+                    (focus)="focus1 = true"
+                    (blur)="focus1 = false"
+                    formControlName="password"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="custom-control custom-control-alternative custom-checkbox">
+                    <input
+                      class="custom-control-input"
+                      id=" customCheckLogin"
+                      type="checkbox"/>
+                    <label class="custom-control-label" for=" customCheckLogin">
+                      <span>Remember me?</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-6 text-right">
+                  <label
+                    class="forget-password-label"
+                    [routerLink]="['/auth/forgot']"
+                    >Forgot password</label
+                  >
+                </div>
+              </div>
+              <div class="text-center">
+                <button
+                  type="button"
+                  (click)="login()"
+                  class="btn btn-primary btn-block my-4">
+                  Sign in
+                </button>
+              </div>
+            </form>
+            <!-- <div class="">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary btn-block my-2"
+                  [routerLink]="['/auth/register']"
+                >
+                  Register
+                </button>
+              </div> -->
+            <hr /> 
+            <p>Easier access to login...</p>
+            <div class="row">
+              <div class="col">
+                <button
+                  class="btn btn-sm btn-block"
+                  (click)="loginOld('Airport')">
+                  Airport
+                </button>
+              </div>
+              <div class="col">
+                <button
+                  class="btn btn-sm btn-block"                  
+                  (click)="loginOld('Airline')">
+                  Airline
+                </button>
+              </div>
+              <div class="col">
+                <button
+                  class="btn btn-sm btn-block"                  
+                  (click)="loginOld('Operation')">
+                  Operation
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button
+                  class="btn btn-sm btn-block"
+                  (click)="loginOld('HOD')">
+                  HOD
+                </button>
+              </div>
+              <div class="col">
+                <button
+                  class="btn btn-sm btn-block"                  
+                  (click)="loginOld('Finance')">
+                  Finance
+                </button>
+              </div>
+              <div class="col">
+                <button
+                  class="btn btn-sm btn-block"                  
+                  (click)="loginOld('SAF')">
+                  SAF
+                </button>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
